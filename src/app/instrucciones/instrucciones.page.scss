@@ -1,0 +1,65 @@
+.boton{
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 500;
+        font-size: 19px;
+        color: #ffffff;
+        background-color: #5cb85c;
+        border-radius: 6px;
+        border: 1px solid #b90606;
+        margin: 0 auto;
+        display: inline-block;
+      }
+      .centrar{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+.oval-half-red {
+width: 300px;
+height: 100px;
+-moz-border-radius: 0 20% / 0 100%;
+-webkit-border-radius: 0 50% / 0 100%;
+border-radius: 0 50% / 0 100%;
+background: #5cb85c;
+border: 3px solid #555;
+overflow: auto;
+}
+.numeros{
+font-family: Arial;
+font-size: 150%;
+font-style: italic;
+color: azure;
+}
+p{
+color: rgb(1, 14, 14);
+text-align: justify;
+overflow: auto;
+}
+
+.center {
+text-align: center;
+border: 3px solid green;
+overflow: auto;
+}
+img.izq {
+float: left;
+}
+table {
+width: 100%;
+border: 1px solid #000;
+}
+th, td {
+width: 25%;
+text-align: center;
+vertical-align: top;
+border: 1px solid #000;
+}
+.colu2{
+background: rgb(1, 107, 1);
+color: azure;
+padding: 2px;
+text-align: center;
+float: none;
+margin: 0 auto;
+}

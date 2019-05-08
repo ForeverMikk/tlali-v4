@@ -1,44 +1,165 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Bienvenido
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
+  
+
+    
+    <p class="colu2"><ion-col><ion-icon name="partly-sunny"></ion-icon> MONITOREO</ion-col>
+    
+    <div echarts [options]="options" theme="dark" class="demo-chart"></div>
+
+    <br>
+    <div text-center class="centrar">
+    <button class="boton"  (click)="agregar()" >
+        <ion-icon name="leaf"></ion-icon>
+        Agregar huerto
+      </button>
+    </div>
+   <ion-list>
+     <ion-item *ngIf="mostrar">
+       <ion-label>Huerto</ion-label>
+       <ion-select [(ngModel)]="hortaliza">
+          <ion-select-option value="hu1">Huerto 1</ion-select-option>
+          <ion-select-option value="hu2">Huerto 2</ion-select-option>
+          <ion-select-option value="hu3">Huerto 3</ion-select-option>
+          <ion-select-option value="hu4">Huerto 4</ion-select-option>
+          <ion-select-option value="hu5">Huerto 5</ion-select-option>
+       </ion-select>
+     </ion-item>
+   </ion-list> 
+
+   
+
+   <ion-list *ngIf="hortaliza=='hu1'">
+      <table class="t">
+        <thead>
+          <tr>
+            <th>1.ESPINACA </th>
+            <th>2.AJO</th>
+            <th>3.ACELGA</th>
+          </tr>
+          
+          <tr>
+            <th>4.ZANAHORIA</th> 
+            <th>5.MENTA</th>
+            <th>6.ESPINACA</th>
+          </tr>
+          <tr>
+            <th>7.CILANTRO</th>
+            <th>8.CEBOLLA</th>
+            <th>9.LENTEJA</th>
+          </tr>
+        
+        </thead>
+      </table>
     </ion-list>
+    
+    <ion-list *ngIf="hortaliza=='hu2'">
+      <table class="t">
+        <thead>
+          <tr>
+            <th>1.ZANAHORIA</th>
+            <th>2.FRIJOL</th>
+            <th>3.CALABAZA</th>
+          </tr>
+          
+          <tr>
+            <th>4.ACELGA</th>
+            <th>5.LECHUGA</th>
+            <th>6.HIERBABUENA</th>
+          </tr>
+          <tr>
+            <th>7.FRIJOL</th>
+            <th>8.RABANO</th>
+            <th>9.CILANTRO</th>
+          </tr>
+        
+        </thead>
+      </table>
+    </ion-list>
+    <ion-list *ngIf="hortaliza=='hu3'">
+      <table class="t">
+        <thead>
+          <tr>
+            <th>1.CILANTRO</th>
+            <th>2.HIERBABUENA</th>
+            <th>3.RABANO</th>
+          </tr>
+          
+          <tr>
+            <th>4.FRIJOL</th>
+            <th>5.LENTEJA</th>
+            <th>6.CILANTRO</th>
+          </tr>
+          <tr>
+            <th>7.ALBAHACA</th>
+            <th>8.HABAS</th>
+            <th>9.PAPA</th>
+          </tr>
+        
+        </thead>
+      </table>
+    </ion-list>
+    
+    <ion-list *ngIf="hortaliza=='hu4'">
+      <table class="t">
+        <thead>
+          <tr>
+            <th>1.AJO</th>
+            <th>2.MENTA</th>
+            <th>3.LECHUGA</th>
+          </tr>
+          
+          <tr>
+            <th>4.LENTEJA</th>
+            <th>5.RABANO</th>
+            <th>6.MENTA</th>
+          </tr>
+          <tr>
+            <th>7.HIERBABUENA</th>
+            <th>8.LENTEJA</th>
+            <th>9.CILANTRO</th>
+          </tr>
+        
+        </thead>
+      </table>
+    </ion-list>
+    
+    <ion-list *ngIf="hortaliza=='hu5'">
+      <table class="t">
+        <thead>
+          <tr>
+            <th>1.CEBOLLA</th>
+            <th>2.LENTEJA</th>
+            <th>3.ZANAHORIA</th>
+          </tr>
+          
+          <tr>
+            <th>4.LENTEJA</th>
+            <th>5.CEBOLLA</th>
+            <th>6.CILANTRO</th>
+          </tr>
+          <tr>
+            <th>7.CILANTRO</th>
+            <th>8.ZANAHORIA</th>
+            <th>9.CEBOLLA</th>
+          </tr>
+        
+        </thead>
+      </table>
+    </ion-list>
+    <div text-center class="centrar">
+    <button class="boton2" *ngIf="hortaliza=='hu1' || hortaliza=='hu2' || hortaliza=='hu3' || hortaliza=='hu4' || hortaliza=='hu5'" (click)="boton()" ion-button round outline icon-start >
+        <ion-icon name="add-circle"></ion-icon></button>
+      </div>
+          
 </ion-content>
