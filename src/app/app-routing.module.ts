@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -19,8 +19,8 @@ const routes: Routes = [
   { path: 'gallinero', loadChildren: './gallinero/gallinero.module#GallineroPageModule' },
   { path: 'instrucciones', loadChildren: './instrucciones/instrucciones.module#InstruccionesPageModule' },
   { path: 'calendario', loadChildren: './calendario/calendario.module#CalendarioPageModule' },
-  { path: 'zanahoria', loadChildren: './zanahoria/zanahoria.module#ZanahoriaPageModule' },
   { path: 'quienes', loadChildren: './quienes/quienes.module#QuienesPageModule' },
+
   { path: 'acelga', loadChildren: './acelga/acelga.module#AcelgaPageModule' },
   { path: 'ajo', loadChildren: './ajo/ajo.module#AjoPageModule' },
   { path: 'albahaca', loadChildren: './albahaca/albahaca.module#AlbahacaPageModule' },
@@ -36,7 +36,12 @@ const routes: Routes = [
   { path: 'perejil', loadChildren: './perejil/perejil.module#PerejilPageModule' },
   { path: 'pimiento', loadChildren: './pimiento/pimiento.module#PimientoPageModule' },
   { path: 'rabano', loadChildren: './rabano/rabano.module#RabanoPageModule' },
-  { path: 'lechuga', loadChildren: './lechuga/lechuga.module#LechugaPageModule' }
+  { path: 'lechuga', loadChildren: './lechuga/lechuga.module#LechugaPageModule' },
+  { path: 'zanahoria', loadChildren: './zanahoria/zanahoria.module#ZanahoriaPageModule' },
+  { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
+  { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
+
 ];
 
 @NgModule({

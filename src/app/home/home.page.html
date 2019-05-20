@@ -10,36 +10,39 @@
 </ion-header>
 
 <ion-content>
-  
 
-    
-    <p class="colu2"><ion-col><ion-icon name="partly-sunny"></ion-icon> MONITOREO</ion-col>
-    
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <p class="colu2">
+    <ion-col>
+      <ion-icon name="partly-sunny"></ion-icon> MONITOREO
+    </ion-col>
+
     <div echarts [options]="options" theme="dark" class="demo-chart"></div>
 
     <br>
     <div text-center class="centrar">
-    <button class="boton"  (click)="agregar()" >
+      <button class="boton" (click)="agregar()">
         <ion-icon name="leaf"></ion-icon>
         Agregar huerto
       </button>
     </div>
-   <ion-list>
-     <ion-item *ngIf="mostrar">
-       <ion-label>Huerto</ion-label>
-       <ion-select [(ngModel)]="hortaliza">
+    <ion-list>
+      <ion-item *ngIf="mostrar">
+        <ion-label>Huerto</ion-label>
+        <ion-select [(ngModel)]="hortaliza">
           <ion-select-option value="hu1">Huerto 1</ion-select-option>
           <ion-select-option value="hu2">Huerto 2</ion-select-option>
           <ion-select-option value="hu3">Huerto 3</ion-select-option>
           <ion-select-option value="hu4">Huerto 4</ion-select-option>
           <ion-select-option value="hu5">Huerto 5</ion-select-option>
-       </ion-select>
-     </ion-item>
-   </ion-list> 
+        </ion-select>
+      </ion-item>
+    </ion-list>
 
-   
-
-   <ion-list *ngIf="hortaliza=='hu1'">
+    <ion-list *ngIf="hortaliza=='hu1'">
       <table class="t">
         <thead>
           <tr>
@@ -47,9 +50,9 @@
             <th>2.AJO</th>
             <th>3.ACELGA</th>
           </tr>
-          
+
           <tr>
-            <th>4.ZANAHORIA</th> 
+            <th>4.ZANAHORIA</th>
             <th>5.MENTA</th>
             <th>6.ESPINACA</th>
           </tr>
@@ -58,11 +61,11 @@
             <th>8.CEBOLLA</th>
             <th>9.LENTEJA</th>
           </tr>
-        
+
         </thead>
       </table>
     </ion-list>
-    
+
     <ion-list *ngIf="hortaliza=='hu2'">
       <table class="t">
         <thead>
@@ -71,7 +74,7 @@
             <th>2.FRIJOL</th>
             <th>3.CALABAZA</th>
           </tr>
-          
+
           <tr>
             <th>4.ACELGA</th>
             <th>5.LECHUGA</th>
@@ -82,7 +85,7 @@
             <th>8.RABANO</th>
             <th>9.CILANTRO</th>
           </tr>
-        
+
         </thead>
       </table>
     </ion-list>
@@ -94,7 +97,7 @@
             <th>2.HIERBABUENA</th>
             <th>3.RABANO</th>
           </tr>
-          
+
           <tr>
             <th>4.FRIJOL</th>
             <th>5.LENTEJA</th>
@@ -105,11 +108,11 @@
             <th>8.HABAS</th>
             <th>9.PAPA</th>
           </tr>
-        
+
         </thead>
       </table>
     </ion-list>
-    
+
     <ion-list *ngIf="hortaliza=='hu4'">
       <table class="t">
         <thead>
@@ -118,7 +121,7 @@
             <th>2.MENTA</th>
             <th>3.LECHUGA</th>
           </tr>
-          
+
           <tr>
             <th>4.LENTEJA</th>
             <th>5.RABANO</th>
@@ -129,11 +132,11 @@
             <th>8.LENTEJA</th>
             <th>9.CILANTRO</th>
           </tr>
-        
+
         </thead>
       </table>
     </ion-list>
-    
+
     <ion-list *ngIf="hortaliza=='hu5'">
       <table class="t">
         <thead>
@@ -142,7 +145,7 @@
             <th>2.LENTEJA</th>
             <th>3.ZANAHORIA</th>
           </tr>
-          
+
           <tr>
             <th>4.LENTEJA</th>
             <th>5.CEBOLLA</th>
@@ -153,13 +156,16 @@
             <th>8.ZANAHORIA</th>
             <th>9.CEBOLLA</th>
           </tr>
-        
+
         </thead>
       </table>
     </ion-list>
     <div text-center class="centrar">
-    <button class="boton2" *ngIf="hortaliza=='hu1' || hortaliza=='hu2' || hortaliza=='hu3' || hortaliza=='hu4' || hortaliza=='hu5'" (click)="boton()" ion-button round outline icon-start >
-        <ion-icon name="add-circle"></ion-icon></button>
-      </div>
-          
+      <button class="boton2"
+        *ngIf="hortaliza=='hu1' || hortaliza=='hu2' || hortaliza=='hu3' || hortaliza=='hu4' || hortaliza=='hu5'"
+        (click)="boton()" ion-button round outline icon-start>
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </div>
+
 </ion-content>
